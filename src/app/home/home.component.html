@@ -1,0 +1,28 @@
+<table class="table table-dark">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Position</td>
+			<td>Department</td>
+			<td>Location</td>
+			<td>Phone</td>
+			<td>Email</td>
+			<td >Action</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let employee of employees">
+			<td>{{employee.name}}</td>
+			<td>{{employee.position}}</td>
+			<td>{{employee.department}}</td>
+			<td>{{employee.location}}</td>
+			<td>{{employee.phone}}</td>
+			<td>{{employee.email}}</td>
+			<td width="275">
+				<a class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="View" routerLink="/show/{{employee._id}}"><i style="font-size:24px" class="fa fa-eye"></i></a>
+				<a class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" routerLink="/edit/{{employee._id}}"><i style="font-size:24px" class="fa fa-edit"></i></a>
+				<a class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete" (click)="deleteEmployee(employee._id)"><i style="font-size:24px" class="fa fa-trash"></i> </a> 
+			</td>
+		</tr>
+	</tbody>
+</table>
